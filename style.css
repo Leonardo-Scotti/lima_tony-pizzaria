@@ -645,3 +645,27 @@ footer nav {
         margin-bottom: 72px;
     }
 }
+
+@media (max-width: 768px) {
+    .container-top img {
+        display: none;
+    }
+    .container-top h2 {
+        bottom: -200px;
+        left: -25px;
+        font-size: 2rem;
+        width: 216px;
+        word-wrap: break-word;
+    }
+    header {
+        top: 20px;
+        height: 80px;
+        padding: 0 24px;
+        justify-content: space-between;
+        background-color: blue;
+    }
+    header>img {
+        height: 100%;
+        fill: var(--secundary-color);
+    }
+}
