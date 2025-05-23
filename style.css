@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -39,6 +43,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: var(--default-padding);
+    background-color: #fff8;
+    z-index: 999;
 }
 
 header menu {
@@ -84,11 +90,12 @@ section {
 }
 
 .home {
-    background-image: url(./assets/icons/bg-home.svg);
-    background-repeat: no-repeat;
+    width: 100%;
+    background-image: url(bg-home.svg);
+    /* background-repeat: no-repeat;
     background-position: top right;
     background-size: contain;
-    display: grid;
+    display: grid; */
     grid-template-rows: 3fr 1fr;
 }
 
@@ -548,3 +555,93 @@ footer nav {
 
 
 /* ========================================= */
+
+@media (max-width: 1024px) {
+     :root {
+        --default-padding: 0 48px;
+    }
+    header {
+        left: 0;
+        top: 64px;
+        position: absolute;
+        background-color: transparent;
+    }
+    header menu {
+        width: 100vw;
+        height: 64px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        justify-content: space-evenly;
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+    header li:hover {
+        color: var(--primary-color);
+    }
+    .home {
+        grid-template-rows: none;
+        place-content: center;
+    }
+    .home .container-pizzas {
+        display: none;
+    }
+    .container-top {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 128px;
+    }
+    .container-produtos {
+        gap: 32px;
+    }
+    .produto {
+        width: auto;
+    }
+    .produto:nth-child(3),
+    .produto:nth-child(4),
+    .produto:nth-child(5) {
+        display: none;
+    }
+    .cardapio-item {
+        border: none;
+    }
+    .servicos-container {
+        flex-direction: column;
+        gap: 48px;
+    }
+    .servicos-item {
+        height: 260px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .servicos-item p {
+        width: 320px;
+    }
+    footer nav {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-item {
+        padding: 0;
+        height: auto;
+    }
+    .nav-item:nth-child(2) {
+        display: none;
+    }
+    .nav-item:nth-child(4) {
+        height: 100%;
+    }
+    .nav-item.social {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    .social li {
+        justify-content: end;
+    }
+    .copyright {
+        margin-bottom: 72px;
+    }
+}
